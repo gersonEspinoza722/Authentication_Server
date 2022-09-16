@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "hwo5lnH+SgmfhRIWXd0+4p9rvCWlUWLVkKZ1Q2mL019upXJsYtgCBu4Fx5aO6FCyK1nF2EFXrjLI6Cifd4EWsQ==",
+  "success": true,
+  "projectFilePath": "/Users/gerson.espinoza/Documents/Authentication_Server/Authentication_Server.csproj",
+  "expectedPackageFiles": [
+    "/Users/gerson.espinoza/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/Users/gerson.espinoza/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/gerson.espinoza/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/gerson.espinoza/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/gerson.espinoza/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/gerson.espinoza/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/gerson.espinoza/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
