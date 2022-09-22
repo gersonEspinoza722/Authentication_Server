@@ -10,9 +10,15 @@ namespace Services.TokenGenerator
 {
     public class AccessTokenGenerator
     {
+        private readonly AuthenticationConfiguration _configuration;
+
+        public AccessTokenGenerator(AuthenticationConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         public string Generate(User user)
         {
-            SecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("5NzpXDs_I9OMj9QKc8ntoxnxZzkyGpTDyla0EvaI3Ky8ZtodJxnp0ReX11OtyYqL0-jdSqgqwXZWeLuD9Fd1hfXzjeholeD8g4f3oXE4cmccwGS3Vr15cA9vOsVu-yEctJQTAmh3XAIh3cVwono0Vgrxsgg3SBIjuUW-KfdsQE8"));
+            SecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.accessToken));
             SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             List<Claim> claims = new List<Claim>()
             {
@@ -22,11 +28,11 @@ namespace Services.TokenGenerator
             };
 
             JwtSecurityToken token = new JwtSecurityToken(
-                "https://localhost:5001",
-                "https://localhost:5001",
+                _configuration.issuer,
+                _configuration.audience,
                 claims,
                 DateTime.UtcNow,
-                DateTime.UtcNow.AddMinutes(30),
+                DateTime.UtcNow.AddMinutes(_configuration.accessTokenExpirationMinutes),
                 credentials);
             return new JwtSecurityTokenHandler().WriteToken(token);
         }

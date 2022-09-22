@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Models;
 using Services.PasswordHashers;
 using Services.TokenGenerator;
 using Services.UserRepositories;
@@ -30,6 +31,9 @@ namespace Authentication_Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            AuthenticationConfiguration authenticationConfiguration = new AuthenticationConfiguration();
+            Configuration.Bind("CustomAuthentication", authenticationConfiguration);
+            services.AddSingleton(authenticationConfiguration);
 
             services.AddSingleton<IPasswordHasher, BcryptPasswordHasher>();
             services.AddSingleton<IUserRepository, InMemoryUserRepository>();
