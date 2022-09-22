@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Services.PasswordHashers;
+using Services.TokenGenerator;
 using Services.UserRepositories;
 
 namespace Authentication_Server
@@ -32,7 +33,8 @@ namespace Authentication_Server
 
             services.AddSingleton<IPasswordHasher, BcryptPasswordHasher>();
             services.AddSingleton<IUserRepository, InMemoryUserRepository>();
-
+            services.AddSingleton<AccessTokenGenerator>();
+           
 
             services.AddSwaggerGen(c =>
             {
